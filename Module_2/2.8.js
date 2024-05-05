@@ -9,12 +9,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 {
-    //asingchronas typescript
-    //promise
-    //simulage
+    const getTODO = () => __awaiter(void 0, void 0, void 0, function* () {
+        const res = yield fetch("https://jsonplaceholder.typicode.com/todos/1");
+        const data = yield res.json();
+        console.log(data);
+        return data;
+    });
+    getTODO();
     const createPromise = () => {
         return new Promise((resolve, reject) => {
-            const data = "something";
+            const data = { something: "something" };
             if (data) {
                 resolve(data);
             }
@@ -27,6 +31,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     const showData = () => __awaiter(void 0, void 0, void 0, function* () {
         const data = yield createPromise();
         console.log(data);
+        return data;
     });
+    showData();
     //
 }
